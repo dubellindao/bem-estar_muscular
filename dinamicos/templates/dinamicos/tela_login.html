@@ -1,0 +1,51 @@
+{% extends 'dinamicos/base.html' %}
+
+{% block content %}
+
+
+    <!-- Container principal -->
+    <div class="flex items-center justify-center min-h-screen bg-opacity-50 bg-gray-900">
+
+        <!-- Formulário de Login -->
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+
+            <!-- Título -->
+            <h1 class="text-3xl font-bold text-green-600 text-center mb-6">Login</h1>
+
+            <!-- Formulário -->
+            <form action="#" method="post">
+
+                <!-- Campo Usuário -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-semibold mb-2" for="username">Usuário:</label>
+                    <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600" required>
+                </div>
+
+                <!-- Campo Senha -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2" for="password">Senha:</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600" required>
+                </div>
+
+                <!-- Botão de Login -->
+                <div class="mb-4">
+                    <button type="submit" class="w-full bg-green-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-700 transition">
+                        Entrar
+                    </button>
+                </div>
+
+                <!-- Link para Cadastro -->
+                <div class="text-center">
+                    <p class="text-gray-700">Não possui cadastro? 
+                        <a href="#" class="text-green-600 font-semibold hover:underline">Cadastre-se!</a>
+                    </p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}

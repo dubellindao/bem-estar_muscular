@@ -1,0 +1,217 @@
+{% extends 'dinamicos/base.html' %}
+
+{% block content %}
+
+    <!-- Main Section -->
+    <main class="container mx-auto mt-12 px-6 lg:px-8">
+
+        <!-- Fichas de Treino Section -->
+        <section class="bg-green-600 text-white py-8 rounded-lg shadow-xl mb-12 text-center">
+            <h2 class="text-4xl font-bold">Fichas de Treino</h2>
+            <p class="text-xl mt-4">Organize e acompanhe seus treinos de forma eficiente</p>
+        </section>
+
+        <!-- Fichas Table Section -->
+        <section class="bg-white py-6 px-8 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-bold text-center text-green-700 mb-6">Treino básico</h3>
+
+            <!-- Responsive Table -->
+            <div class="container mx-auto my-8">
+                <table class="table-auto w-full border-collapse border border-green-500">
+                    <thead class="bg-green-500 text-white">
+                        <tr>
+                            <th class="px-4 py-2 border border-green-600">Exercício</th>
+                            <th class="px-4 py-2 border border-green-600">Séries</th>
+                            <th class="px-4 py-2 border border-green-600">Repetições</th>
+                            <th class="px-4 py-2 border border-green-600">Carga (kg)</th>
+                            <th class="px-4 py-2 border border-green-600">Intervalo (min)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-gray-100 hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Supino Reto</td>
+                            <td class="px-4 py-2 border border-green-600">4</td>
+                            <td class="px-4 py-2 border border-green-600">12</td>
+                            <td class="px-4 py-2 border border-green-600">40</td>
+                            <td class="px-4 py-2 border border-green-600">1</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Agachamento Livre</td>
+                            <td class="px-4 py-2 border border-green-600">3</td>
+                            <td class="px-4 py-2 border border-green-600">10</td>
+                            <td class="px-4 py-2 border border-green-600">60</td>
+                            <td class="px-4 py-2 border border-green-600">2</td>
+                        </tr>
+                        <tr class="bg-gray-100 hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Levantamento Terra</td>
+                            <td class="px-4 py-2 border border-green-600">4</td>
+                            <td class="px-4 py-2 border border-green-600">8</td>
+                            <td class="px-4 py-2 border border-green-600">80</td>
+                            <td class="px-4 py-2 border border-green-600">2</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Desenvolvimento Ombros</td>
+                            <td class="px-4 py-2 border border-green-600">4</td>
+                            <td class="px-4 py-2 border border-green-600">12</td>
+                            <td class="px-4 py-2 border border-green-600">25</td>
+                            <td class="px-4 py-2 border border-green-600">1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="container mx-auto my-8">
+                <h2 class="text-center text-2xl font-bold mb-4">Ficha de Treino - Hipertrofia (Superiores e Inferiores)</h2>
+                <table class="table-auto w-full border-collapse border border-green-500">
+                    <thead class="bg-green-500 text-white">
+                        <tr>
+                            <th class="px-4 py-2 border border-green-600">Exercício</th>
+                            <th class="px-4 py-2 border border-green-600">Séries</th>
+                            <th class="px-4 py-2 border border-green-600">Repetições</th>
+                            <th class="px-4 py-2 border border-green-600">Carga (kg)</th>
+                            <th class="px-4 py-2 border border-green-600">Descanso (min)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-gray-100 hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Rosca Direta</td>
+                            <td class="px-4 py-2 border border-green-600">4</td>
+                            <td class="px-4 py-2 border border-green-600">10</td>
+                            <td class="px-4 py-2 border border-green-600">20</td>
+                            <td class="px-4 py-2 border border-green-600">1</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Flexão de Braço</td>
+                            <td class="px-4 py-2 border border-green-600">3</td>
+                            <td class="px-4 py-2 border border-green-600">15</td>
+                            <td class="px-4 py-2 border border-green-600">Corpo Livre</td>
+                            <td class="px-4 py-2 border border-green-600">1.5</td>
+                        </tr>
+                        <tr class="bg-gray-100 hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Cadeira Extensora</td>
+                            <td class="px-4 py-2 border border-green-600">4</td>
+                            <td class="px-4 py-2 border border-green-600">12</td>
+                            <td class="px-4 py-2 border border-green-600">50</td>
+                            <td class="px-4 py-2 border border-green-600">1</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Leg Press 45º</td>
+                            <td class="px-4 py-2 border border-green-600">4</td>
+                            <td class="px-4 py-2 border border-green-600">10</td>
+                            <td class="px-4 py-2 border border-green-600">120</td>
+                            <td class="px-4 py-2 border border-green-600">2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="container mx-auto my-8">
+                <h2 class="text-center text-2xl font-bold mb-4">Ficha de Treino - Resistência</h2>
+                <table class="table-auto w-full border-collapse border border-green-500">
+                    <thead class="bg-green-500 text-white">
+                        <tr>
+                            <th class="px-4 py-2 border border-green-600">Exercício</th>
+                            <th class="px-4 py-2 border border-green-600">Séries</th>
+                            <th class="px-4 py-2 border border-green-600">Repetições</th>
+                            <th class="px-4 py-2 border border-green-600">Carga (kg)</th>
+                            <th class="px-4 py-2 border border-green-600">Descanso (min)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-gray-100 hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Corrida (Esteira)</td>
+                            <td class="px-4 py-2 border border-green-600">1</td>
+                            <td class="px-4 py-2 border border-green-600">20 minutos</td>
+                            <td class="px-4 py-2 border border-green-600">--</td>
+                            <td class="px-4 py-2 border border-green-600">--</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Agachamento no Smith</td>
+                            <td class="px-4 py-2 border border-green-600">3</td>
+                            <td class="px-4 py-2 border border-green-600">15</td>
+                            <td class="px-4 py-2 border border-green-600">40</td>
+                            <td class="px-4 py-2 border border-green-600">1</td>
+                        </tr>
+                        <tr class="bg-gray-100 hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Afundo com Halteres</td>
+                            <td class="px-4 py-2 border border-green-600">3</td>
+                            <td class="px-4 py-2 border border-green-600">12</td>
+                            <td class="px-4 py-2 border border-green-600">15 cada lado</td>
+                            <td class="px-4 py-2 border border-green-600">1.5</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Pulley Frontal</td>
+                            <td class="px-4 py-2 border border-green-600">4</td>
+                            <td class="px-4 py-2 border border-green-600">12</td>
+                            <td class="px-4 py-2 border border-green-600">35</td>
+                            <td class="px-4 py-2 border border-green-600">1</td>
+                        </tr>
+                        <tr class="bg-gray-100 hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Abdominal na Prancha</td>
+                            <td class="px-4 py-2 border border-green-600">3</td>
+                            <td class="px-4 py-2 border border-green-600">15</td>
+                            <td class="px-4 py-2 border border-green-600">Corpo Livre</td>
+                            <td class="px-4 py-2 border border-green-600">1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="container mx-auto my-8">
+                <h2 class="text-center text-2xl font-bold mb-4">Ficha de Treino - Força</h2>
+                <table class="table-auto w-full border-collapse border border-green-500">
+                    <thead class="bg-green-500 text-white">
+                        <tr>
+                            <th class="px-4 py-2 border border-green-600">Exercício</th>
+                            <th class="px-4 py-2 border border-green-600">Séries</th>
+                            <th class="px-4 py-2 border border-green-600">Repetições</th>
+                            <th class="px-4 py-2 border border-green-600">Carga (kg)</th>
+                            <th class="px-4 py-2 border border-green-600">Descanso (min)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-gray-100 hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Levantamento Terra</td>
+                            <td class="px-4 py-2 border border-green-600">4</td>
+                            <td class="px-4 py-2 border border-green-600">6</td>
+                            <td class="px-4 py-2 border border-green-600">100</td>
+                            <td class="px-4 py-2 border border-green-600">2</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Supino Reto</td>
+                            <td class="px-4 py-2 border border-green-600">4</td>
+                            <td class="px-4 py-2 border border-green-600">6</td>
+                            <td class="px-4 py-2 border border-green-600">80</td>
+                            <td class="px-4 py-2 border border-green-600">2</td>
+                        </tr>
+                        <tr class="bg-gray-100 hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Agachamento Livre</td>
+                            <td class="px-4 py-2 border border-green-600">4</td>
+                            <td class="px-4 py-2 border border-green-600">6</td>
+                            <td class="px-4 py-2 border border-green-600">90</td>
+                            <td class="px-4 py-2 border border-green-600">2</td>
+                        </tr>
+                        <tr class="bg-white hover:bg-gray-200">
+                            <td class="px-4 py-2 border border-green-600">Remada Curvada</td>
+                            <td class="px-4 py-2 border border-green-600">4</td>
+                            <td class="px-4 py-2 border border-green-600">6</td>
+                            <td class="px-4 py-2 border border-green-600">70</td>
+                            <td class="px-4 py-2 border border-green-600">2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="bg-green-600 text-white py-12 rounded-lg shadow-xl mt-12 text-center">
+            <h2 class="text-3xl font-bold">Aumente Seus Resultados com um Treino Personalizado!</h2>
+            <p class="text-xl mt-4">Obtenha sua ficha personalizada e atinja seus objetivos.</p>
+            <button class="bg-white text-green-600 px-6 py-3 mt-6 rounded-full font-semibold hover:bg-gray-200">Solicitar Ficha de Treino</button>
+        </section>
+
+    </main>
+
+{% endblock %}

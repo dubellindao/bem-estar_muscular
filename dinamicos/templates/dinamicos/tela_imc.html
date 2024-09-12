@@ -1,0 +1,73 @@
+{% extends 'dinamicos/base.html' %}
+
+{% block content %}
+
+    <!-- Container Principal -->
+    <div class="container mx-auto my-12 p-6 bg-white shadow-lg rounded-lg">
+        <!-- Título da Página -->
+        <h1 class="text-3xl text-center font-bold text-green-600 mb-6">Calcule seu IMC</h1>
+        
+        <!-- Descrição -->
+        <p class="text-center text-gray-600 mb-8">
+            Descubra agora se você está com o peso ideal e acompanhe sua saúde de forma eficiente!
+        </p>
+        
+        <!-- Formulário de Cálculo -->
+        <div class="bg-green-100 p-6 rounded-lg">
+            <form id="imcForm" class="flex flex-col items-center space-y-4">
+                
+                <!-- Campo de Peso -->
+                <div class="w-full max-w-md">
+                    <label for="peso" class="block text-sm font-medium text-green-700">Peso (kg)</label>
+                    <input type="number" id="peso" placeholder="Digite seu peso" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" required>
+                </div>
+
+                <!-- Campo de Altura -->
+                <div class="w-full max-w-md">
+                    <label for="altura" class="block text-sm font-medium text-green-700">Altura (m)</label>
+                    <input type="number" step="0.01" id="altura" placeholder="Digite sua altura" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" required>
+                </div>
+
+                <!-- Botão de Calcular -->
+                <div class="text-center">
+                    <button type="button" onclick="calcularIMC()" class="bg-green-600 text-white px-6 py-2 rounded-full font-bold hover:bg-green-700 focus:ring-4 focus:ring-green-300">
+                        Calcular IMC
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Seção de Resultado -->
+        <div id="resultado" class="mt-6 text-center text-gray-800 text-lg font-semibold"></div>
+    </div>
+
+    <!-- Script para Calcular o IMC -->
+    <script>
+        function calcularIMC() {
+            const peso = parseFloat(document.getElementById('peso').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+
+            if (peso && altura) {
+                const imc = (peso / (altura * altura)).toFixed(2);
+                let categoria = '';
+
+                if (imc < 18.5) {
+                    categoria = 'Abaixo do Peso';
+                } else if (imc >= 18.5 && imc < 24.9) {
+                    categoria = 'Peso Normal';
+                } else if (imc >= 25 && imc < 29.9) {
+                    categoria = 'Sobrepeso';
+                } else {
+                    categoria = 'Obesidade';
+                }
+
+                document.getElementById('resultado').innerHTML = 
+                    `<p>Seu IMC é <span class="text-green-600 font-bold">${imc}</span>, o que indica <span class="text-green-600 font-bold">${categoria}</span>.</p>`;
+            } else {
+                document.getElementById('resultado').innerHTML = 
+                    `<p class="text-red-600">Por favor, insira valores válidos para peso e altura.</p>`;
+            }
+        }
+    </script>
+
+{% endblock %}
