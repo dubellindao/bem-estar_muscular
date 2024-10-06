@@ -9,7 +9,7 @@ class Usuario(models.Model):
     def __str__(self):
         return self.nome
         
-class Calculo_imc(models.Model):
+class CalculoImc(models.Model):
     data = models.DateField()
     imc = models.CharField(max_length=50)
     usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE)
@@ -17,16 +17,15 @@ class Calculo_imc(models.Model):
     def __str__(self):
         return self.imc
 
-class Ficha_treino(models.Model):
-    data_criacao = models.DateField()
-    segunda_feira = models.CharField(max_length=100)
-    terca_feira = models.CharField(max_length=100)
-    quarta_feira = models.CharField(max_length=100)
-    quinta_feira = models.CharField(max_length=100)
-    sexta_feira = models.CharField(max_length=100)
+class FichaTreino(models.Model):
+    nome = models.CharField(max_length=100)
+    segunda = models.CharField(max_length=100)
+    terca = models.CharField(max_length=100)
+    quarta = models.CharField(max_length=100)
+    quinta = models.CharField(max_length=100)
+    sexta = models.CharField(max_length=100)
     sabado = models.CharField(max_length=100)
     domingo = models.CharField(max_length=100)
-    usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE)
 
-    def __str__ (self):
-        return self.data_criacao
+    def __str__(self):
+        return self.nome

@@ -1,15 +1,9 @@
 from django.contrib import admin
-from .models import Usuario, Ficha_treino, Calculo_imc
+from .models import Usuario, FichaTreino, CalculoImc
 # Register your models here.
 
-@admin.register(Usuario)
-class UsuarioAdmin(admin.ModelAdmin):
-    fields =  ['nome']
+admin.site.register(Usuario)
 
-@admin.register(Ficha_treino)
-class Ficha_treinoAdmin(admin.ModelAdmin):
-    fields = ['data_criacao']
+admin.site.register(FichaTreino)
 
-@admin.register(Calculo_imc)
-class Calculo_imcAdmin(admin.ModelAdmin):
-    fields = ['imc']
+admin.site.register(CalculoImc)
