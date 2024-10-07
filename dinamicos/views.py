@@ -7,7 +7,7 @@ from .forms import FichaTreinoForm
 def index (request):
     return render(request, 'dinamicos/index.html')
 
-
+# CRUD
 def fichas_prontas (request):
     ficha = FichaTreino.objects.all()
 
@@ -58,6 +58,7 @@ def remover_ficha (reauest, id):
     ficha.delete()
 
     return redirect('fichas_prontas')
+# FIM CRUD
 
 
 def tela_imc (request):

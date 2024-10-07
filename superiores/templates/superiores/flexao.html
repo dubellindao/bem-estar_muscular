@@ -1,0 +1,91 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+    <!-- Container principal -->
+    <div class="bg-gray-100 min-h-screen p-8">
+
+        <!-- Seção do Exercício Flexão de Braço -->
+        <div class="container mx-auto bg-white rounded-lg shadow-lg p-6 flex flex-col lg:flex-row items-center lg:space-x-8">
+
+            <!-- Informações sobre a Flexão de Braço (Esquerda) -->
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <h1 class="text-3xl font-bold text-green-600 mb-4">Flexão de Braço</h1>
+                <p class="text-gray-700 text-lg mb-4">
+                    A flexão de braço é um exercício corporal fundamental que fortalece o peito, tríceps e ombros. Um movimento simples, mas poderoso, que pode ser feito em qualquer lugar, sem a necessidade de equipamentos.
+                </p>
+
+                <!-- Benefícios da Flexão -->
+                <div class="mb-4">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-2">Benefícios:</h2>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Fortalece o peitoral e tríceps.</li>
+                        <li>Melhora a resistência muscular.</li>
+                        <li>Aprimora a postura e estabilização.</li>
+                        <li>Pode ser adaptado para vários níveis de dificuldade.</li>
+                    </ul>
+                </div>
+
+                <!-- Dicas -->
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-2">Dicas para uma boa execução:</h2>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Mantenha o corpo alinhado, sem arquear a lombar.</li>
+                        <li>Abaixe até formar um ângulo de 90° com os cotovelos.</li>
+                        <li>Pressione as mãos de forma controlada ao subir.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Imagem da Flexão de Braço (Direita) -->
+            <div class="lg:w-1/2 mt-6 lg:mt-0">
+                <img src="{% static 'images/homem_flexao.gif' %}" alt="Flexão de Braço" class="w-full rounded-lg shadow-lg">
+            </div>
+
+        </div>
+
+        <!-- Seção de Ferramentas de Treino -->
+        <div class="container mx-auto mt-8 text-center bg-white p-6 rounded-lg shadow-lg">
+
+            <!-- Título da Seção -->
+            <h2 class="text-2xl font-bold text-green-600 mb-6">Ferramentas para Maximizar Seu Treino</h2>
+
+            <!-- Contador de Séries -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Contador de Repetições</h3>
+                <p class="text-gray-600 mb-4">Acompanhe o número de repetições realizadas para manter o foco no seu progresso.</p>
+                
+                <div class="flex flex-col items-center">
+                    <span id="series-count" class="text-4xl font-bold text-green-600 mb-4">0</span>
+                    <div class="flex space-x-4">
+                        <button id="add-series" class="bg-green-600 text-white py-2 px-6 rounded-lg hover:bg-green-700 transition">
+                            Adicionar Repetições
+                        </button>
+                        <button id="reset-series" class="bg-gray-600 text-white py-2 px-6 rounded-lg hover:bg-gray-700 transition">
+                            Resetar Contagem
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+            // Função para contar repetições
+            let seriesCount = 0;
+            document.getElementById('add-series').addEventListener('click', function() {
+                seriesCount++;
+                document.getElementById('series-count').innerText = seriesCount;
+            });
+
+            // Função para resetar a contagem
+            document.getElementById('reset-series').addEventListener('click', function() {
+                seriesCount = 0;
+                document.getElementById('series-count').innerText = seriesCount;
+            });
+        </script>
+
+
+
+{% endblock %}

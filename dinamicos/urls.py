@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import index, fichas_prontas, tela_imc, superiores, tela_login, cadastrar_ficha, editar_ficha, remover_ficha
+from superiores.views import peito, flexao
 
 urlpatterns = [
     path('', index, name='index'),
@@ -10,4 +11,11 @@ urlpatterns = [
     path('tela_imc/', tela_imc, name='tela_imc'),
     path('superiores/', superiores, name='superiores'),
     path('tela_login/', tela_login, name='tela_login'),
+
+    # Caminhos para os músculos
+    path('peito/', peito, name='peito'),
+
+
+    # Caminhos para os exercícios
+    path('flexao/', flexao, name='flexao'),
 ]
