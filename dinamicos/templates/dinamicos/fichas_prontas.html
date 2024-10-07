@@ -201,6 +201,56 @@
                     </tbody>
                 </table>
             </div>
+
+            <!--Ficha Criada pelo Usuário-->
+            <div class="container mx-auto my-8">
+                <h2 class="text-center text-2xl font-bold mb-4">Minha Ficha de Treino</h2>
+                <table class="table-auto w-full border-collapse border border-green-500">
+                    <thead class="bg-green-500 text-white">
+                        <tr>
+                            <th class="px-4 py-2 border border-green-600">Nome</th>
+                            <th class="px-4 py-2 border border-green-600">Segunda-feira</th>
+                            <th class="px-4 py-2 border border-green-600">Terça-feira</th>
+                            <th class="px-4 py-2 border border-green-600">Quarta-feira</th>
+                            <th class="px-4 py-2 border border-green-600">Quinta-feira</th>
+                            <th class="px-4 py-2 border border-green-600">Sexta-feira</th>
+                            <th class="px-4 py-2 border border-green-600">Sábado </th>
+                            <th class="px-4 py-2 border border-green-600">Domingo</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700">
+
+                        {% for info in ficha %}
+                            <tr class="border-t border-gray-200 hover:bg-green-50 transition">
+                                <td class="py-3 px-6">{{ info.nome }}</td>
+                                <td class="py-3 px-6">{{ info.segunda }}</td>
+                                <td class="py-3 px-6">{{ info.terca }}</td>
+                                <td class="py-3 px-6">{{ info.quarta }}</td>
+                                <td class="py-3 px-6">{{ info.quinta }}</td>
+                                <td class="py-3 px-6">{{ info.sexta }}</td>
+                                <td class="py-3 px-6">{{ info.sabado }}</td>
+                                <td class="py-3 px-6">{{ info.domingo }}</td>
+                                
+                                <!-- Botões de Ação -->
+                                <td class="py-3 px-6 text-center flex space-x-2 justify-center">
+                                    <!-- Botão de Editar -->
+                                    <a href="{% url 'editar_ficha' info.id %}"
+                                    class="inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition">
+                                        Editar
+                                    </a>
+                                    
+                                    <!-- Botão de Remover -->
+                                    <a href="{% url 'remover_ficha' info.id %}"
+                                    class="inline-block bg-red-500 text-white font-semibold py-2 px-4 rounded hover:bg-red-600 transition">
+                                        Remover
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
             
             
         </section>
@@ -209,7 +259,8 @@
         <section class="bg-green-600 text-white py-12 rounded-lg shadow-xl mt-12 text-center">
             <h2 class="text-3xl font-bold">Aumente Seus Resultados com um Treino Personalizado!</h2>
             <p class="text-xl mt-4">Obtenha sua ficha personalizada e atinja seus objetivos.</p>
-            <button class="bg-white text-green-600 px-6 py-3 mt-6 rounded-full font-semibold hover:bg-gray-200">Solicitar Ficha de Treino</button>
+            <br>
+            <a href="{% url 'cadastrar_ficha' %}" class="bg-white text-green-600 px-6 py-3 mt-6 rounded-full font-semibold hover:bg-gray-200">Criar Ficha de Treino</a>
         </section>
 
     </main>

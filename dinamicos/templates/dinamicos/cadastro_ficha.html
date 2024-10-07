@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="flex items-center justify-center min-h-screen my-4">
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full">
+            
+            <!-- Título -->
+            <h1 class="text-3xl font-bold text-green-600 text-center mb-6">Cadastro de Treinos</h1>
+            
+            <!-- Formulário de Cadastro -->
+            <form method="post">
+
+                {% csrf_token %}
+                
+                <!-- Campo Nome -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-semibold mb-2" for="nome">Nome do Usuário:</label>
+                    <div>
+                        {{ form.nome }}
+                    </div>
+                </div>
+
+                <!-- Dias da Semana e Treinos -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                    <!-- Segunda-feira -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="segunda">Segunda-feira:</label>
+                        {{ form.segunda }}
+                    </div>
+                    
+                    <!-- Terça-feira -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="terca">Terça-feira:</label>
+                        {{ form.terca }}
+                    </div>
+
+                    <!-- Quarta-feira -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="quarta">Quarta-feira:</label>
+                        {{ form.quarta }}
+                    </div>
+                    
+                    <!-- Quinta-feira -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="quinta">Quinta-feira:</label>
+                        {{ form.quinta }}
+                    </div>
+
+                    <!-- Sexta-feira -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="sexta">Sexta-feira:</label>
+                        {{ form.sexta }}
+                    </div>
+
+                    <!-- Sábado -->
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="sabado">Sábado:</label>
+                        {{ form.sabado }}
+                    </div>
+
+                    <!-- Domingo -->
+                    <div class="sm:col-span-2">
+                        <label class="block text-gray-700 font-semibold mb-2" for="domingo">Domingo:</label>
+                        {{ form.domingo }}
+                    </div>
+                </div>
+
+                <!-- Botão de Salvar -->
+                <div class="text-center">
+                    <button type="submit" class="w-full bg-green-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-700 transition">
+                        Salvar Meu Treino
+                    </button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
