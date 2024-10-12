@@ -75,3 +75,6 @@ def inferiores (request):
 
 def tela_login (request):
     return render(request, 'dinamicos/tela_login.html')
+
+def tela_cadastro (request):
+    return render(request, 'dinamicos/tela_cadastro.html')

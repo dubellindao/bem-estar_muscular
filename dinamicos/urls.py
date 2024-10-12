@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, fichas_prontas, tela_imc, superiores, inferiores, tela_login, cadastrar_ficha, editar_ficha, remover_ficha
+from .views import index, fichas_prontas, tela_imc, superiores, inferiores, tela_login, tela_cadastro, cadastrar_ficha, editar_ficha, remover_ficha
 from superiores.views import peito, biceps, triceps
 from inferiores.views import quadriceps
 from exercicios.views import flexao, rosca_direta, triceps_barra, agachamento_livre
@@ -14,6 +14,7 @@ urlpatterns = [
     path('superiores/', superiores, name='superiores'),
     path('inferiores/', inferiores, name='inferiores'),
     path('tela_login/', tela_login, name='tela_login'),
+    path('tela_cadastro/', tela_cadastro, name='tela_cadastro'),
 
     # Caminhos para os músculos
     path('peito/', peito, name='peito'),
