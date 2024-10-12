@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Container Principal -->
+    <div class="container mx-auto my-12 p-6 bg-white shadow-lg rounded-lg">
+        <!-- Título da Página -->
+        <h1 class="text-3xl text-center font-bold text-green-600 mb-6">Principais Músculos Inferiores</h1>
+        
+        <!-- Descrição -->
+        <p class="text-center text-gray-600 mb-8">
+            Conheça os músculos inferiores mais importantes e veja dicas para melhorar seus treinos!
+        </p>
+        
+        <!-- Grid dos Músculos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Quadríceps -->
+            <div class="bg-green-100 p-4 rounded-lg shadow-md text-center">
+                <img src="{% static 'images/image 15.2.png' %}" alt="Quadriceps" class="w-full h-48 object-cover rounded-t-md">
+                <h2 class="text-2xl font-bold text-green-700 mt-4">Quadríceps</h2>
+                <p class="text-gray-600 mt-2">O quadríceps é um dos maiores grupos musculares inferiores, essencial para movimentos de empurrar e estruturar a parte inferior do corpo.</p>
+                <a href="{% url 'quadriceps' %}" class="mt-4 inline-block text-green-700 hover:underline">Ver Exercícios</a>
+            </div>
+
+            <!-- Glúteos -->
+            <div class="bg-green-100 p-4 rounded-lg shadow-md text-center">
+                <img src="{% static 'images/gluteos.jpg' %}" alt="Glúteos" class="w-full h-48 object-cover rounded-t-md">
+                <h2 class="text-2xl font-bold text-green-700 mt-4">Glúteos</h2>
+                <p class="text-gray-600 mt-2">Localizado na parte de trás do corpo, o glúteo é uma importante parte para a estética do membro inferiores, como também é essencial para a estabilização corporal.</p>
+                <a href="#" class="mt-4 inline-block text-green-700 hover:underline">Ver Exercícios</a>
+            </div>
+
+            <!-- Posterior -->
+            <div class="bg-green-100 p-4 rounded-lg shadow-md text-center">
+                <img src="{% static 'images/posterior.jpg' %}" alt="Posterior" class="w-full h-48 object-cover rounded-t-md">
+                <h2 class="text-2xl font-bold text-green-700 mt-4">Posterior</h2>
+                <p class="text-gray-600 mt-2">O posterior ocupa a parte posterior das pernas e é essencial para os movimentos de extensão da perna, além de compor cerca de grande parte da massa muscular da perna.</p>
+                <a href="#" class="mt-4 inline-block text-green-700 hover:underline">Ver Exercícios</a>
+            </div>
+
+        </div>
+
+    </div>
+            
+
+    </div>
+
+{% endblock %}

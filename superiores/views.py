@@ -5,5 +5,8 @@ from django.shortcuts import render
 def peito (request):
     return render(request, 'superiores/peito.html')
 
-def flexao (request):
-    return render(request, 'superiores/flexao.html')
+def biceps (request):
+    return render(request, 'superiores/biceps.html')
+
+def triceps (request):
+    return render(request, 'superiores/triceps.html')

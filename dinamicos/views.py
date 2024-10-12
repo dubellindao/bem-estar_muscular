@@ -69,5 +69,9 @@ def superiores (request):
     return render(request, 'dinamicos/superiores.html')
 
 
+def inferiores (request):
+    return render(request, 'dinamicos/inferiores.html')
+
+
 def tela_login (request):
     return render(request, 'dinamicos/tela_login.html')

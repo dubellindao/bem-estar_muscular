@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Página de Tríceps -->
+    <div class="container mx-auto mt-8 text-center bg-white p-6 rounded-lg shadow-lg">
+
+
+        <!-- Descrição e Imagem -->
+        <!-- Título -->
+        <h1 class="text-3xl font-bold text-green-600 mb-6">Triceps</h1>
+        <div class="flex flex-col md:flex-row justify-between items-center bg-gray-100 p-6 rounded-lg shadow-md mb-6">
+            <div class="md:w-1/2 text-left">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Função do Tríceps</h2>
+                <p class="text-gray-600 mb-4">O tríceps é responsável pela extensão do cotovelo e tem um papel fundamental em empurrar e pressionar pesos. Ele é crucial para movimentos como o supino e desenvolvimento de ombros.</p>
+            </div>
+            <div class="md:w-1/2 text-right">
+                <img src="{% static 'images/triceps.jpg' %}" alt="Imagem do Tríceps" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+        </div>
+
+        <!-- Seção de Exercícios do Tríceps -->
+        <div class="container mx-auto mt-8">
+            <h2 class="text-2xl font-bold text-green-600 text-center mb-6">Exercícios para Tríceps</h2>
+
+            <!-- Card de Exercícios -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Exercício 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Tríceps na barra</h3>
+                    <p class="text-gray-600 mb-6">
+                        Um exercício que utiliza a polia e uma barra reta, onde o movimento é feito de forma vertical.
+                    </p>
+                    <a href="{% url 'triceps_barra' %}" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition">
+                        Saiba Mais
+                    </a>
+                </div>
+
+                <!-- Exercício 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Mergulho no máquina</h3>
+                    <p class="text-gray-600 mb-6">
+                        Utiliza o peso do corpo para fortalecer o tríceps, excelente para quem busca ganho de força e definição.
+                    </p>
+                    <a href="#" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition">
+                        Saiba Mais
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

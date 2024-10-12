@@ -1,0 +1,96 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+    <!-- Página do Exercício: Agachamento Livre -->
+    <div class="container mx-auto mt-8 text-center bg-white p-6 rounded-lg shadow-lg">
+
+        <!-- Título -->
+        <h1 class="text-3xl font-bold text-green-600 mb-6">Agachamento Livre</h1>
+
+        <!-- Descrição e Imagem -->
+        <div class="flex flex-col md:flex-row justify-between items-center bg-gray-100 p-6 rounded-lg shadow-md mb-6">
+            <div class="md:w-1/2 text-left">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Descrição do Exercício/h2>
+                <p class="text-gray-600 mb-4">
+                    O agachamento livre é um dos exercícios mais completos para o fortalecimento dos músculos das pernas, especialmente o quadríceps e os glúteos. 
+                    Além de melhorar a força muscular, ele promove estabilidade e equilíbrio, sendo essencial para o treino de membros inferiores.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Este exercício consiste em agachar-se até que os joelhos formem um ângulo de 90 graus, mantendo a coluna ereta e os pés firmes no chão. Pode ser realizado com ou sem pesos adicionais.
+                </p>
+            </div>
+            <div class="md:w-1/2 text-right">
+                <img src="{% static 'images/image 17.png' %}" alt="Agachamento Livre" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+        </div>
+
+        <!-- Benefícios -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Benefícios do Agachamento Livre</h2>
+
+            <ul class="list-disc list-inside text-left text-gray-600">
+                <li>Fortalece os quadríceps, glúteos e isquiotibiais.</li>
+                <li>Melhora o equilíbrio e a estabilidade corporal.</li>
+                <li>Promove o aumento da força nas pernas e tronco.</li>
+                <li>É um exercício funcional que melhora a mobilidade no dia a dia.</li>
+            </ul>
+        </div>
+
+        <!-- Dicas para uma execução correta -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Dicas para Execução</h2>
+            <ul class="list-disc list-inside text-left text-gray-600">
+                <li>Mantenha o abdômen contraído durante todo o movimento para estabilizar a coluna.</li>
+                <li>Posicione os pés na largura dos ombros e distribua o peso uniformemente entre eles.</li>
+                <li>Evite que os joelhos ultrapassem a linha dos pés ao agachar-se, para proteger as articulações.</li>
+                <li>Desça até que suas coxas fiquem paralelas ao chão, mantendo a postura ereta.</li>
+                <li>Utilize cargas adequadas à sua capacidade e aumente progressivamente o peso conforme ganha força.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Seção de Ferramentas de Treino -->
+    <div class="container mx-auto mt-8 text-center bg-white p-6 rounded-lg shadow-lg">
+
+        <!-- Título da Seção -->
+        <h2 class="text-2xl font-bold text-green-600 mb-6">Ferramentas para Maximizar Seu Treino</h2>
+
+        <!-- Contador de Séries -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Contador de Repetições</h3>
+            <p class="text-gray-600 mb-4">Acompanhe o número de repetições realizadas para manter o foco no seu progresso.</p>
+            
+            <div class="flex flex-col items-center">
+                <span id="series-count" class="text-4xl font-bold text-green-600 mb-4">0</span>
+                <div class="flex space-x-4">
+                    <button id="add-series" class="bg-green-600 text-white py-2 px-6 rounded-lg hover:bg-green-700 transition">
+                        Adicionar Repetições
+                    </button>
+                    <button id="reset-series" class="bg-gray-600 text-white py-2 px-6 rounded-lg hover:bg-gray-700 transition">
+                        Resetar Contagem
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Função para contar repetições
+        let seriesCount = 0;
+        document.getElementById('add-series').addEventListener('click', function() {
+            seriesCount++;
+            document.getElementById('series-count').innerText = seriesCount;
+        });
+
+        // Função para resetar a contagem
+        document.getElementById('reset-series').addEventListener('click', function() {
+            seriesCount = 0;
+            document.getElementById('series-count').innerText = seriesCount;
+        });
+    </script>
+
+{% endblock %}

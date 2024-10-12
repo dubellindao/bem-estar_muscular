@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Página de Bíceps -->
+    <div class="container mx-auto mt-8 text-center bg-white p-6 rounded-lg shadow-lg">
+
+
+        <!-- Descrição e Imagem -->
+
+        <!-- Título -->
+        <h1 class="text-3xl font-bold text-green-600 mb-6">Bíceps</h1>
+        <div class="flex flex-col md:flex-row justify-between items-center bg-gray-100 p-6 rounded-lg shadow-md mb-6">
+            <div class="md:w-1/2 text-left">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Função do Bíceps</h2>
+                <p class="text-gray-600 mb-4">O bíceps braquial é responsável pela flexão do cotovelo e também auxilia na supinação do antebraço. Ele é essencial para exercícios de puxada e levantamento.</p>
+            </div>
+            <div class="md:w-1/2 text-right">
+                <img src="{% static 'images/image 13.png' %}" alt="Imagem do Bíceps" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+        </div>
+
+        <!-- Seção de Exercícios do Bíceps -->
+        <div class="container mx-auto mt-8">
+            <h2 class="text-2xl font-bold text-green-600 text-center mb-6">Exercícios para Bíceps</h2>
+
+            <!-- Card de Exercícios -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Exercício 1 -->
+                <div class="bg-white p-4 rounded-lg shadow-md hover:bg-green-50 transition">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Rosca direta</h3>
+                    <p class="text-gray-600 mb-6">
+                        Um dos exercícios mais populares para o bíceps. Utilize uma barra para realizar a flexão e extensão do cotovelo de forma controlada.
+                    </p>
+                    <a href="{% url 'rosca_direta' %}" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition">
+                        Saiba Mais
+                    </a>
+                </div>
+
+                <!-- Exercício 2 -->
+                <div class="bg-white p-4 rounded-lg shadow-md hover:bg-green-50 transition">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Rosca concentrada</h3>
+                    <p class="text-gray-600 mb-6">
+                        Este exercício foca na contração máxima do bíceps, sendo realizado de forma unilateral para melhor isolar o músculo.
+                    </p>
+                    <a href="#" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition">
+                        Saiba Mais
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

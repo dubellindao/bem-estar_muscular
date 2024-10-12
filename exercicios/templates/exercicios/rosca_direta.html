@@ -1,0 +1,89 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+    <!-- Página de Rosca Direta -->
+    <div class="container mx-auto mt-8 text-center bg-white p-6 rounded-lg shadow-lg">
+
+        <!-- Título -->
+        <h1 class="text-3xl font-bold text-green-600 mb-6">Rosca Direta</h1>
+
+        <!-- Descrição e Imagem -->
+        <div class="flex flex-col md:flex-row justify-between items-center bg-gray-100 p-6 rounded-lg shadow-md mb-6">
+            <div class="md:w-1/2 text-left">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Descrição do Exercício</h2>
+                <p class="text-gray-600 mb-4">
+                    A rosca direta é um dos exercícios mais populares para o desenvolvimento do bíceps. Ele é realizado com uma barra ou halteres e é excelente para fortalecer e hipertrofiar essa região. O movimento envolve a flexão do cotovelo, focando na contração máxima do bíceps ao levantar a barra.
+                </p>
+            </div>
+            <div class="md:w-1/2 text-right">
+                <img src="{% static 'images/image 15.png' %}" alt="Rosca Direta" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+        </div>
+
+        <!-- Benefícios -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Benefícios da Rosca Direta</h2>
+            <ul class="list-disc list-inside text-left text-gray-600">
+                <li>Fortalecimento dos bíceps e antebraços.</li>
+                <li>Melhora da força de puxada e levantamento de peso.</li>
+                <li>Facilita o desenvolvimento muscular de maneira isolada.</li>
+                <li>Ajuda a prevenir lesões ao melhorar o equilíbrio muscular.</li>
+            </ul>
+        </div>
+
+        <!-- Dicas para uma execução correta -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Dicas para Execução</h2>
+            <ul class="list-disc list-inside text-left text-gray-600">
+                <li>Mantenha o abdômen contraído para estabilizar o corpo durante o movimento.</li>
+                <li>Evite balançar o corpo e use apenas a força dos braços para levantar a barra.</li>
+                <li>Realize o movimento de forma controlada, garantindo a máxima contração do bíceps no ponto mais alto.</li>
+                <li>Comece com cargas leves e aumente progressivamente conforme sua força melhorar.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Seção de Ferramentas de Treino -->
+    <div class="container mx-auto mt-8 text-center bg-white p-6 rounded-lg shadow-lg">
+
+        <!-- Título da Seção -->
+        <h2 class="text-2xl font-bold text-green-600 mb-6">Ferramentas para Maximizar Seu Treino</h2>
+
+        <!-- Contador de Séries -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Contador de Repetições</h3>
+            <p class="text-gray-600 mb-4">Acompanhe o número de repetições realizadas para manter o foco no seu progresso.</p>
+            
+            <div class="flex flex-col items-center">
+                <span id="series-count" class="text-4xl font-bold text-green-600 mb-4">0</span>
+                <div class="flex space-x-4">
+                    <button id="add-series" class="bg-green-600 text-white py-2 px-6 rounded-lg hover:bg-green-700 transition">
+                        Adicionar Repetições
+                    </button>
+                    <button id="reset-series" class="bg-gray-600 text-white py-2 px-6 rounded-lg hover:bg-gray-700 transition">
+                        Resetar Contagem
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Função para contar repetições
+        let seriesCount = 0;
+        document.getElementById('add-series').addEventListener('click', function() {
+            seriesCount++;
+            document.getElementById('series-count').innerText = seriesCount;
+        });
+
+        // Função para resetar a contagem
+        document.getElementById('reset-series').addEventListener('click', function() {
+            seriesCount = 0;
+            document.getElementById('series-count').innerText = seriesCount;
+        });
+    </script>
+
+{% endblock%}

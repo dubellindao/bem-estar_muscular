@@ -4,26 +4,25 @@
 {% block content %}
 
     <!-- Container principal -->
-    <div class="bg-gray-100 min-h-screen p-8">
+    <div class="container mx-auto mt-8 text-center bg-white p-6 rounded-lg shadow-lg">
 
-        <!-- Seção do Músculo Peito -->
-        <div class="container mx-auto bg-white rounded-lg shadow-lg p-6 flex flex-col lg:flex-row items-center lg:space-x-8">
-            
-            <!-- Função do Músculo Peito (Esquerda) -->
-            <div class="lg:w-1/2 text-center lg:text-left">
-                <h1 class="text-3xl font-bold text-green-600 mb-4">Peito</h1>
+        <!-- Descrição e Imagem -->
+
+        <!-- Título -->
+        <h1 class="text-3xl font-bold text-green-600 mb-6">Peito</h1>
+        <div class="flex flex-col md:flex-row justify-between items-center bg-gray-100 p-6 rounded-lg shadow-md mb-6">
+            <div class="md:w-1/2 text-left">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Função do Peito</h2>
                 <p class="text-gray-700 text-lg">
                     O músculo peitoral é fundamental para movimentos de empurrar e levantar. Ele auxilia em diversas atividades, como empurrar objetos e levantar pesos. 
                     O peitoral maior é o músculo mais visível da parte superior do tórax e desempenha um papel crucial em exercícios de força e resistência.
                 </p>
             </div>
-
-            <!-- Imagem do Músculo Peito (Direita) -->
-            <div class="lg:w-1/2">
+            <div class="md:w-1/2 text-right">
                 <img src="{% static 'images/image 9.png' %}" alt="Músculo Peitoral" class="w-full rounded-lg shadow-lg">
             </div>
-
         </div>
+
 
         <!-- Seção de Exercícios do Peito -->
         <div class="container mx-auto mt-8">
@@ -33,7 +32,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 <!-- Exercício 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <div class="bg-white p-4 rounded-lg shadow-md hover:bg-green-50 transition">
                     <h3 class="text-xl font-bold text-gray-800 mb-4">Flexão de braço</h3>
                     <p class="text-gray-600 mb-6">
                         Um excelente exercício agrupatório e que foca contração máxima do músculo peitoral.
@@ -44,7 +43,7 @@
                 </div>
 
                 <!-- Exercício 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <div class="bg-white p-4 rounded-lg shadow-md hover:bg-green-50 transition">
                     <h3 class="text-xl font-bold text-gray-800 mb-4">Supino Reto</h3>
                     <p class="text-gray-600 mb-6">
                         O supino reto é um dos exercícios mais conhecidos e eficazes para trabalhar o peitoral maior.

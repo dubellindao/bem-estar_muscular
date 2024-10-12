@@ -34,6 +34,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'dinamicos',
     'superiores',
+    'inferiores',
+    'exercicios',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
