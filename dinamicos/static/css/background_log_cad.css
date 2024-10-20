@@ -1,0 +1,11 @@
+/* Arquivo: static/css/background_log_cad.css */
+
+.bg-custom {
+    background-image: url('../images/homem-com-halteres 1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(21 128 61);
+    opacity: 1;
+    height: 100vh;
+}
