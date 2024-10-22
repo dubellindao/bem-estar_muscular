@@ -15,11 +15,27 @@
     <!-- Header -->
     <header class="bg-green-700 text-white py-4 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
+
+            <!-- Logo -->
             <div class="inline-flex gap-2">
-                <img class="w-10 rounded-lg" src="{% static 'images/Logo bem-estar muscular.png' %}" alt="Logo do site">
+                <img class="w-10 rounded-lg" src="{% static 'images/LogoChatBranca.jpg' %}" alt="Logo do site">
                 <h1 class="text-3xl font-bold"> Bem-estar Muscular </h1>
             </div>
-            <nav>
+
+            <!-- Navegação + Barra de Pesquisa -->
+            <nav class="flex items-center gap-6">
+
+                <!-- Barra de Pesquisa -->
+                <div class="relative">
+                    <input type="text" placeholder="Buscar exercícios..." class="py-2 px-4 rounded-full text-black focus:outline-none">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white text-green-700 px-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 10l6 6m-6 0l6-6" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Links de Navegação -->
                 <ul class="flex space-x-6">
                     <li><a href="{% url 'index' %}" class="hover:underline">Home</a></li>
                     <li><a href="{% url 'fichas_prontas' %}" class="hover:underline">Treinos</a></li>
@@ -29,11 +45,13 @@
             </nav>
         </div>
     </header>
-    
-    
+
     {% block content %}
     {% endblock %}
+
+    <!-- Espaço entre conteúdo e footer -->
     <div class="mt-40"></div>
+
     <!-- Footer -->
     <footer class="fixed bottom-0 w-screen bg-green-700 text-white py-6 mt-12 text-center">
         <p>&copy; 2024 Bem-estar Muscular. Todos os direitos reservados.</p>
