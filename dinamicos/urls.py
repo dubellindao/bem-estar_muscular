@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from .views import index, fichas_prontas, tela_imc, superiores, inferiores, tela_login, tela_cadastro, cadastrar_ficha, editar_ficha, remover_ficha
 from superiores.views import peito, biceps, triceps
 from inferiores.views import quadriceps
@@ -6,6 +6,7 @@ from exercicios.views import flexao, rosca_direta, triceps_barra, agachamento_li
 
 urlpatterns = [
     path('', index, name='index'),
+    path('contas/', include('django.contrib.auth.urls')),
     path('fichas_prontas/', fichas_prontas, name='fichas_prontas'),
     path('cadastrar_ficha/', cadastrar_ficha, name='cadastrar_ficha'),
     path('editar_ficha/<int:id>/', editar_ficha, name='editar_ficha'),
