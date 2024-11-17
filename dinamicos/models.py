@@ -9,14 +9,6 @@ class Usuario(models.Model):
 
     def __str__(self):
         return self.nome
-        
-class CalculoImc(models.Model):
-    data = models.DateField()
-    imc = models.CharField(max_length=50)
-    usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.imc
 
 class FichaTreino(models.Model):
     nome = models.CharField(max_length=100)
