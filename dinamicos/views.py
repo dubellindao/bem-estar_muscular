@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login 
 from .models import FichaTreino, Usuario
@@ -24,6 +25,22 @@ def index (request):
 
     return render(request, 'dinamicos/index.html', context=context)
     
+def buscar_exercicio(request):
+    termo = request.GET.get('q')
+    if termo:
+        # Verifica e redireciona para a página do exercício correspondente
+        if termo.lower() == 'flexão':
+            return redirect(reverse('flexao'))
+        elif termo.lower() == 'rosca direta':
+            return redirect(reverse('rosca_direta'))
+        elif termo.lower() == 'agachamento livre':
+            return redirect(reverse('agachamento_livre'))
+        elif termo.lower() == 'tríceps na barra':
+            return redirect(reverse('triceps_barra'))
+        # Adicione mais condições para outros exercícios
+        else:
+            return render(request, 'exercicio_nao_encontrado.html')
+    return redirect('index')  # Redireciona à página inicial se não houver termo
 
 # CRUD
 

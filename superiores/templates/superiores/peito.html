@@ -3,59 +3,61 @@
 
 {% block content %}
 
-    <!-- Container principal -->
-    <div class="container mx-auto mt-8 text-center bg-white p-6 rounded-lg shadow-lg">
+<!-- Container principal -->
+<div class="container mx-auto mt-8 text-center bg-white p-6 rounded-lg shadow-lg">
 
-        <!-- Descrição e Imagem -->
-
-        <!-- Título -->
-        <h1 class="text-3xl font-bold text-green-600 mb-6">Peito</h1>
-        <div class="flex flex-col md:flex-row justify-between items-center bg-gray-100 p-6 rounded-lg shadow-md mb-6">
-            <div class="md:w-1/2 text-left">
-                <h2 class="text-xl font-semibold text-gray-800 mb-4">Função do Peito</h2>
-                <p class="text-gray-700 text-lg">
-                    O músculo peitoral é fundamental para movimentos de empurrar e levantar. Ele auxilia em diversas atividades, como empurrar objetos e levantar pesos. 
-                    O peitoral maior é o músculo mais visível da parte superior do tórax e desempenha um papel crucial em exercícios de força e resistência.
-                </p>
-            </div>
-            <div class="md:w-1/2 text-right">
-                <img src="{% static 'images/image 9.png' %}" alt="Músculo Peitoral" class="w-full rounded-lg shadow-lg">
-            </div>
+    <!-- Descrição e Imagem -->
+    <h1 class="text-3xl font-bold text-green-600 mb-6">Peito</h1>
+    <div class="flex flex-col md:flex-row justify-between items-center bg-gray-100 p-6 rounded-lg shadow-md mb-6">
+        <div class="md:w-1/2 text-left">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Função do Peito</h2>
+            <p class="text-gray-700 text-lg">
+                O músculo peitoral é fundamental para movimentos de empurrar e levantar. Ele auxilia em diversas atividades, como empurrar objetos e levantar pesos.
+            </p>
         </div>
-
-
-        <!-- Seção de Exercícios do Peito -->
-        <div class="container mx-auto mt-8">
-            <h2 class="text-2xl font-bold text-green-600 text-center mb-6">Exercícios para Peito</h2>
-
-            <!-- Card de Exercícios -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                <!-- Exercício 1 -->
-                <div class="bg-white p-4 rounded-lg shadow-md hover:bg-green-50 transition">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Flexão de braço</h3>
-                    <p class="text-gray-600 mb-6">
-                        Um excelente exercício agrupatório e que foca contração máxima do músculo peitoral.
-                    </p>
-                    <a href="{% url 'flexao' %}" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition">
-                        Saiba Mais
-                    </a>
-                </div>
-
-                <!-- Exercício 2 -->
-                <div class="bg-white p-4 rounded-lg shadow-md hover:bg-green-50 transition">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Supino Reto</h3>
-                    <p class="text-gray-600 mb-6">
-                        O supino reto é um dos exercícios mais conhecidos e eficazes para trabalhar o peitoral maior.
-                    </p>
-                    <a href="#" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition">
-                        Saiba Mais
-                    </a>
-                </div>
-
-            </div>
+        <div class="md:w-1/2 text-right">
+            <img src="{% static 'images/image 9.png' %}" alt="Músculo Peitoral" class="w-full rounded-lg shadow-lg">
         </div>
-
     </div>
+
+    <!-- Seção de Exercícios do Peito -->
+    <div class="container mx-auto mt-8">
+        <h2 class="text-2xl font-bold text-green-600 text-center mb-6">Exercícios para Peito</h2>
+
+        <!-- Card de Exercícios -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {% for exercicio in page_obj %}
+            <div class="bg-white p-4 rounded-lg shadow-md hover:bg-green-50 transition">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">{{ exercicio.nome }}</h3>
+                <p class="text-gray-600 mb-6">{{ exercicio.descricao }}</p>
+                <a href="{% url 'flexao' %}" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition">
+                    Saiba Mais
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Controles de Paginação -->
+    <div class="mt-6">
+        <nav class="flex justify-center space-x-2">
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition">
+                Anterior
+            </a>
+            {% endif %}
+
+            <span class="py-2 px-4 text-gray-700">
+                Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition">
+                Próxima
+            </a>
+            {% endif %}
+        </nav>
+    </div>
+</div>
 
 {% endblock %}
